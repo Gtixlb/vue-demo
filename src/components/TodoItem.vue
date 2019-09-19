@@ -1,10 +1,10 @@
 <template>
-  <div>ii</div>
+  <li>{{content}}</li>
 </template>
 
 <script>
 export default {
- 
+  props: ['content']
 }
 </script>
 
