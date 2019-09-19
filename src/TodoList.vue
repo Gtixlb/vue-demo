@@ -9,6 +9,8 @@
         v-for="(item,index) of list"
         :index="index"
         :content="item"
+        :key="index"
+        @delete="handleDelete"
       ></todo-item>
     </ul>
   </div>
@@ -35,6 +37,10 @@ export default {
     clickSubmit () {
       this.list.push(this.inputValue)
       this.inputValue = ''
+    },
+    //子组件传值父组件进行删除
+    handleDelete (index) {
+      this.list.splice(index, 1)
     }
   }
 }

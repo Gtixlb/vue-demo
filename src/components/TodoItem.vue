@@ -1,10 +1,15 @@
 <template>
-  <li>{{content}}</li>
+  <li @click="clickDelete">{{content}}</li>
 </template>
 
 <script>
 export default {
-  props: ['content']
+  props: ['content', 'index'],
+  methods: {
+    clickDelete () {
+      this.$emit('delete', this.index)
+    }
+  }
 }
 </script>
 
